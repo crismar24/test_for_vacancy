@@ -6,7 +6,7 @@ public class Factorial {
         long n = 0;
 
 //        args = new String[1];
-//        args[0] = "4.2";
+//        args[0] = "4";
 //        System.out.println(args.length);
 
         try {
