@@ -1,5 +1,11 @@
+/*
+@Author: Yury
+@Date: 28.05.2018
+ */
 public class Factorial {
+
     public Factorial() {
+
     }
 
     public static void main(String[] args) {
