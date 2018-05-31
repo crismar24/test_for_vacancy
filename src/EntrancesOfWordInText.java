@@ -8,6 +8,7 @@ Output: 25
  */
 
 import java.io.*;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class EntrancesOfWordInText {
@@ -16,21 +17,24 @@ public class EntrancesOfWordInText {
     }
 
     public static void main(String[] args) {
-
+        args = new String[1];
         args[0] = "e://some_text.txt text";
 
+        System.out.println(quantityEntrancesOfAWordInTheText(args[0]));
 
-        quantityEntrancesOfAWordInTheText(args[0]);
     }
 
-    public static int quantityEntrancesOfAWordInTheText(String path) {
-        String[] mPath = path.split(" ");
-        if (mPath.length == 0) {
-            throw new RuntimeException();
+    public static long quantityEntrancesOfAWordInTheText(String path) {
+        long quantity = 0;
+        String[] mPath = path.split("\\s");
+        String pathFile = null;
+        String findWord = null;
+        try {
+            pathFile = mPath[0];
+            findWord = mPath[1];
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new RuntimeException(e);
         }
-        String pathFile = mPath[0];
-        String findWord = mPath[1];
-        //Pattern.compile()
 
         File file = new File(pathFile);
         try {
@@ -38,7 +42,15 @@ public class EntrancesOfWordInText {
             try {
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
-                    //
+                    System.out.println(line);
+                    //String[] mLine = line.split("[^\\p{L}]");
+                    Pattern pattern = Pattern.compile("[^\\w]");
+                    String[] massLine = pattern.split(line);
+                    for (String s : massLine) {
+                        if (s.toLowerCase().equals(findWord)) {
+                            quantity++;
+                        }
+                    }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -56,6 +68,6 @@ public class EntrancesOfWordInText {
         }
 
 
-        return 0;
+        return quantity;
     }
 }
