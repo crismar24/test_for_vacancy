@@ -43,8 +43,8 @@ public class EntrancesOfWordInText {
                 String line;
                 while ((line = bufferedReader.readLine()) != null) {
                     System.out.println(line);
-                    //String[] mLine = line.split("[^\\p{L}]");
-                    Pattern pattern = Pattern.compile("[^\\w]");
+                    //найти все буквы Юникода в разрезе символа- [^\\p{L}]
+                    Pattern pattern = Pattern.compile("[\\p{L}]");
                     String[] massLine = pattern.split(line);
                     for (String s : massLine) {
                         if (s.toLowerCase().equals(findWord)) {
