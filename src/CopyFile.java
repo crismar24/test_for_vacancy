@@ -21,6 +21,7 @@ public class CopyFile {
         } else {
             File fileOriginal = new File(line.substring(0, whiteSpace));
             File fileCopy = new File(line.substring(whiteSpace + 1, line.length()));
+            //
 
         }
     }
