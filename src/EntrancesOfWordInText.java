@@ -17,8 +17,8 @@ public class EntrancesOfWordInText {
     }
 
     public static void main(String[] args) {
-        args = new String[1];
-        args[0] = "e://some_text.txt text";
+//        args = new String[1];
+//        args[0] = "e://some_text.txt text";
 
         System.out.println(quantityEntrancesOfAWordInTheText(args[0]));
 

@@ -9,15 +9,19 @@ Output: 25
 
 public class Calculator {
     public static void main(String[] args) {
+        args = new String[1];
+        args[0] = "4,78+2,22";
 
-        float result = calculate(args[0]);
+        float result = 0;
         try {
-            System.out.println(result);
+            result = calculate(args[0]);
+            if (result == 0) {
+                throw new RuntimeException("There are not correct input data");
+            }else {
+                System.out.println(result);
+            }
         } catch (ArrayIndexOutOfBoundsException arrayIndexOutOfBoundsException) {
-            System.out.println("There are no input data");
-        }
-        if (result == 0) {
-            throw new RuntimeException("There are not correct input data");
+            System.out.println("Не ввели данные");
         }
     }
 
@@ -30,22 +34,27 @@ public class Calculator {
         int subtraction = line.indexOf("-");
         int addition = line.indexOf("+");
 
-        first = Float.valueOf( line.substring(0, multiplication - 1) );
-        second = Float.valueOf(line.substring(multiplication + 1, line.length()));
-
         if (multiplication > 0) {
+            first = Float.valueOf( line.substring(0, multiplication) );
+            second = Float.valueOf(line.substring(multiplication + 1, line.length()));
             result = first * second;
             return result;
         }
         if (division > 0) {
+            first = Float.valueOf( line.substring(0, division) );
+            second = Float.valueOf(line.substring(division + 1, line.length()));
             result = first / second;
             return result;
         }
         if (subtraction > 0) {
+            first = Float.valueOf( line.substring(0, subtraction) );
+            second = Float.valueOf(line.substring(subtraction + 1, line.length()));
             result = first - second;
             return result;
         }
         if (addition > 0) {
+            first = Float.valueOf( line.substring(0, addition) );
+            second = Float.valueOf(line.substring(addition + 1, line.length()));
             result = first + second;
             return result;
         }
