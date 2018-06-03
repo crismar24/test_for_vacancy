@@ -1,6 +1,6 @@
 /*
 @Author: Yury
-@Date: 29.05.2018
+@Date: 31.05.2018
 
 ***
 Input: e:\some_text.txt test
