@@ -8,22 +8,37 @@
  */
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.channels.FileChannel;
+
+import static java.lang.System.out;
+
 
 public class CopyFile {
-    public static void main(String[] args) {
-
-    }
 
     void copy(String line) {
-        int whiteSpace = line.indexOf("\\s");
-        if (whiteSpace < 0) {
-            System.out.println("Not correct format of a way to files");
-        } else {
-            File fileOriginal = new File(line.substring(0, whiteSpace));
-            File fileCopy = new File(line.substring(whiteSpace + 1, line.length()));
-            //
+        //System.out.println("Not correct format of a way to files");
 
+        public static void main (String args[]) {
+            copyFiles(new File(args[0]), new File(args[1]));
+        }
+
+        public static void copyFiles(File in, File out) throws IOException {
+            FileChannel inChannel = new
+                    FileInputStream(in).getChannel();
+            FileChannel outChannel = new
+                    FileOutputStream(out).getChannel();
+            try {
+                inChannel.transferTo(0, inChannel.size(),
+                        outChannel);
+            } catch (IOException e) {
+                throw e;
+            } finally {
+                if (inChannel != null) inChannel.close();
+                if (outChannel != null) outChannel.close();
+            }
         }
     }
 
-}
