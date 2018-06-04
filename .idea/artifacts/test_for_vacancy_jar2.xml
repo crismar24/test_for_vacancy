@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="test_for_vacancy:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/EntrancesOfWordInText_jar2</output-path>
+    <root id="archive" name="test_for_vacancy.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/out/EntrancesOfWordInText/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="test_for_vacancy" />
+    </root>
+  </artifact>
+</component>
