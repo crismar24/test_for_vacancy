@@ -18,9 +18,9 @@ import java.util.Date;
 public class CopyFile {
 
     public static void main(String[] args) {
-        args = new String[2];
-        args[0] = "E:\\Downloads\\Gringo.2018.WEB-DLRip.1.46Gb.MegaPeer.avi";
-        args[1] = "E:\\Downloads\\Gringo.2018.WEB-DLRip.1.46Gb.MegaPeer-copy111.avi";
+//        args = new String[2];
+//        args[0] = "E:\\Downloads\\Gringo.2018.WEB-DLRip.1.46Gb.MegaPeer.avi";
+//        args[1] = "E:\\Downloads\\Gringo.2018.WEB-DLRip.1.46Gb.MegaPeer-copy111.avi";
 
         try {
             Date dateStart = new Date();

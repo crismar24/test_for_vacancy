@@ -9,8 +9,8 @@ Output: 25
 
 public class Calculator {
     public static void main(String[] args) {
-        args = new String[1];
-        args[0] = "4,78+2,22";
+//        args = new String[1];
+//        args[0] = "4,78+2,22";
 
         float result = 0;
         try {

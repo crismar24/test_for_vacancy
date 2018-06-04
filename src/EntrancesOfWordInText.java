@@ -8,7 +8,6 @@ Output: 25
  */
 
 import java.io.*;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class EntrancesOfWordInText {
@@ -20,18 +19,17 @@ public class EntrancesOfWordInText {
 //        args = new String[1];
 //        args[0] = "e://some_text.txt text";
 
-        System.out.println(quantityEntrancesOfAWordInTheText(args[0]));
+        System.out.println(quantityEntrancesOfAWordInTheText(args));
 
     }
 
-    public static long quantityEntrancesOfAWordInTheText(String path) {
+    public static long quantityEntrancesOfAWordInTheText(String [] args) {
         long quantity = 0;
-        String[] mPath = path.split("\\s");
         String pathFile = null;
         String findWord = null;
         try {
-            pathFile = mPath[0];
-            findWord = mPath[1];
+            pathFile = args[0];
+            findWord = args[1];
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new RuntimeException(e);
         }
