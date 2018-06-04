@@ -29,7 +29,7 @@ public class CopyFile {
             System.out.println("Время, затраченнное на копирование файла: " + (dateEnd.getTime() - dateStart.getTime()) + " милисекунд");
         } catch (IOException e) {
             e.printStackTrace();
-            System.err.println(e);
+            //System.err.println(e.);
             // TODO описание ошибки ?
         }
     }
